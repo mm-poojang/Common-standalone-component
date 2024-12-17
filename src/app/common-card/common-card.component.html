@@ -1,0 +1,69 @@
+<form [formGroup]="postForm">
+    <p-card>
+        <!-- <div class="post-wrapper">
+            <label class="input-title">Post Type</label>
+            <p-dropdown [options]="mediaType" formControlName="postType" placeholder="Select post type"
+                class="full-width" optionLabel="name"></p-dropdown>
+        </div> -->
+        <div class="post-wrapper">
+            <label class="input-title">Post Type</label>
+            <p-dropdown [options]="mediaType" formControlName="postType" placeholder="Select post type"
+                class="full-width" optionLabel="name"></p-dropdown>
+        </div>
+        <!-- <div class="timezone-wrapper">
+            <label class="input-title">Select time zone</label>
+            <p-dropdown [options]="timeZones" formControlName="timezone" placeholder="Select time zone"
+                class="full-width" optionLabel="name"></p-dropdown>
+        </div>
+        <div class="datetime-wrapper">
+            <div class="schedule-date">
+                <label class="input-title">Schedule date</label>
+                <p-calendar formControlName="scheduleDate" placeholder="Select Date" [showIcon]="true"
+                    inputId="icondisplay"></p-calendar>
+            </div>
+            <div class="schedule-time">
+                <label class="input-title">Schedule time</label>
+                <p-dropdown [options]="mediaType" formControlName="scheduleTime" placeholder="Select time"
+                    class="full-width" optionLabel="name"></p-dropdown>
+            </div>
+        </div>
+        <div class="media-wrapper">
+            <label class="input-title">Upload Media</label>
+            <p-fileUpload name="media" accept="image/*,video/*" [customUpload]="true" [showUploadButton]="false"
+                [showCancelButton]="false" (uploadHandler)="onUpload($event)" (onSelect)="onFileSelect($event)"
+                (onClear)="onClear()"></p-fileUpload>
+        </div>
+        <div class="caption-wrapper">
+            <label class="input-title">Post caption (Optional)</label>
+            <textarea rows="5" cols="30" formControlName="caption" pInputTextarea [autoResize]="true"
+                placeholder="Write your caption here..."></textarea>
+        </div>
+        <div class="hashtag-wrapper">
+            <label class="input-title">Hashtag (Optional)</label>
+            <p-chips formControlName="hashtags" [addOnTab]="true" [addOnBlur]="true" separator=" " [max]="20"
+                removeIcon="pi pi-trash" (onAdd)="validateHashtags($event)" (onRemove)="onRemove()"></p-chips>
+            <div *ngIf="showValidationMessage && !isValidHashtag">
+                <p class="p-error">Please ensure that all values start with '#'.</p>
+            </div>
+        </div> -->
+        <div class="editable-dial-example">
+            <!-- <input placeholder="Editable dial" [ngxTimepicker]="editableDial">asd
+            <ngx-material-timepicker #editableDial [enableKeyboardInput]="true"></ngx-material-timepicker> -->
+            <input placeholder="Editable dial" [ngxTimepicker]="picker">
+            <ngx-material-timepicker #picker [enableKeyboardInput]="true"></ngx-material-timepicker>
+            sad
+            <input placeholder="Custom buttons" aria-label="Custom buttons" [ngxTimepicker]="timepickerWithButtons"
+                readonly>
+            <ngx-material-timepicker #timepickerWithButtons [cancelBtnTmpl]="cancelBtn"
+                [confirmBtnTmpl]="confirmBtn"></ngx-material-timepicker>
+
+            <ng-template #cancelBtn>
+                <!-- <hr> -->
+                <p-button label="Primary" [text]="true" [raised]="true" />
+            </ng-template>
+            <ng-template #confirmBtn>
+                <p-button label="Primary" [raised]="true" />
+            </ng-template>
+        </div>
+    </p-card>
+</form>

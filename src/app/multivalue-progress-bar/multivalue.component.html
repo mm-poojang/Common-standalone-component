@@ -1,0 +1,34 @@
+<div class="progress-wrapper">
+    <div class="custom-progress">
+        <!-- Progress bar with color segments -->
+        <p-progressBar [value]="100" styleClass="progress-container"></p-progressBar>
+        <div class="progress-segments">
+            <div class="positive" [ngStyle]="{'width': positivePercentage + '%'}"></div>
+            <div class="neutral" [ngStyle]="{'width': neutralPercentage + '%'}"></div>
+            <div class="negative" [ngStyle]="{'width': negativePercentage + '%'}"></div>
+        </div>
+
+        <!-- Labels aligned below respective color segments -->
+    </div>
+    <div class="progress-labels">
+        <span class="label" [ngStyle]="{'width': positivePercentage + '%'}">Positive ({{ positivePercentage }}%) </span>
+        <span class="label" [ngStyle]="{'width': neutralPercentage + '%'}">Nagative ({{ neutralPercentage }}%) </span>
+        <span class="label" [ngStyle]="{'width': negativePercentage + '%'}">Neutral ({{ negativePercentage }}%) </span>
+    </div>
+</div>
+<div>
+    <span>Side bar demo</span>
+    <br>
+    <p-sidebar [(visible)]="sidebarVisible2" position="right">
+        <h3>Right Sidebar</h3>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+            Aldus PageMaker including versions of Lorem Ipsum
+        </p>
+    </p-sidebar>
+    <p-button type="button" class="mr-2" (onClick)="sidebarVisible2 = true" icon="pi pi-arrow-left" />
+</div>

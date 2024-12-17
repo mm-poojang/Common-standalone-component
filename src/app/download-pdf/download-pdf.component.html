@@ -1,0 +1,49 @@
+<div id="card-content" class="card-content">
+    <p-card class="p-mb-4 p-card-container mb-3">
+        <div class="p-d-flex p-flex-column p-jc-center p-ai-center p-p-3 mb-3">
+
+            <img src="assets/images/calendar1.png" alt="Sample Image" class="p-mb-2" style="width: auto; height: auto;">
+
+            <p class="p-text-center p-mb-2">the posts demonstrated a notably higher engagement rate compared to the
+                other. This suggests that the content, caption, and hashtags used in this particular post resonated
+                better with your audience, resulting in increased likes, comments, and shares. To optimize future posts,
+                consider incorporating similar elements that were successful in this post.</p>
+
+            <div class="" style="width: 100%;">
+                <button pButton type="button" label="Suggest Caption"
+                    class="p-button-lg p-button-outlined p-mb-2"></button>
+            </div>
+            <p-card class="performance-prediction">
+                <div class="flex gap-3">
+                    <div class="flex-auto text-center p-2 inner-card">
+                        <p class="m-0">13.8k</p>
+                        <p class="m-0">Likes</p>
+                    </div>
+                    <div class="flex-auto p-2 text-center p-2 inner-card">
+                        <p class="m-0">58%</p>
+                        <p class="m-0">Engagement Rate</p>
+                    </div>
+                    <div class="flex-auto p-2 text-center p-2 inner-card">
+                        <p class="m-0">90.6k</p>
+                        <p class="m-0">Reach</p>
+                    </div>
+                </div>
+            </p-card>
+            <br>
+            <p-progressBar value="70" class="p-mb-2"></p-progressBar>
+            <br>
+
+            <div class="p-flex-column flex gap-5 p-mb-4">
+                <p-calendar [(ngModel)]="selectedDate" showIcon></p-calendar>
+                <p-calendar [(ngModel)]="selectedTime" [timeOnly]="true" showIcon></p-calendar>
+            </div>
+            <br>
+            <p-dropdown [options]="timezones" [(ngModel)]="selectedTimezone" [disabled]="true"></p-dropdown>
+        </div>
+    </p-card>
+</div>
+<br>
+<div>
+    <p-button type="primary" label="Download Pdf" (click)="downloadPdf()"
+        class="p-button-lg p-button-outlined p-mb-2 mb-3"></p-button>
+</div>

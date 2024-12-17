@@ -1,0 +1,34 @@
+<div>
+   <span>Hashtag Chips</span> 
+    <!-- <div class="input-container">
+        <input type="text" [(ngModel)]="inputValue" (keydown)="onKeydown($event)" placeholder="Add a hashtag" />
+    </div>
+
+    <div class="chip-container">
+        <p-chip *ngFor="let chip of chips" [label]="chip" [removable]="true" (onRemove)="removeChip(chip)">
+        </p-chip>
+    </div> -->
+    <div class="card p-fluid">
+        <p-chips [(ngModel)]="values" [addOnTab]="true" [addOnBlur]="true" (keydown)="onKeyDown($event)" separator=" "
+            [max]="2" removeIcon="pi pi-times" [caseSensitiveDuplication]="true">
+        </p-chips>
+    </div>
+    <!-- <p-chips [(ngModel)]="values" /> -->
+
+    <!-- <div>
+        <p-chip label="#Dance" [removable]="true" />
+        <p-chip label="#Beats" [removable]="true" removeIcon="pi pi-times" />
+    </div> -->
+</div>
+
+<br><br>
+<label>Animated looped button</label>
+<div>
+    <button class="video-button">
+        <video [autoplay]="true" [muted]="true" [loop]="true" class="button-video">
+            <source src="../../assets/images/chatWithAi.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <span class="button-text">Animated button</span>
+    </button>
+</div>

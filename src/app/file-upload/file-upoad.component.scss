@@ -1,0 +1,56 @@
+// .upload-area {
+//     // display: flex;
+//     // flex-direction: column;
+//     // align-items: center;
+//     // justify-content: center;
+//     // border: 2px dashed #ccc;
+//     // padding: 20px;
+//     // cursor: pointer;
+// }
+
+// .upload-icon {
+//     font-size: 2rem;
+//     color: #007ad9;
+//     margin-bottom: 10px;
+// }
+
+// .upload-area p {
+//     font-size: 1.2rem;
+//     color: #777;
+// }
+.custom-upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ccc;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.custom-upload-icon {
+    font-size: 3rem;
+    color: #007ad9;
+    margin-bottom: 15px;
+}
+
+.custom-upload-area p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.click-to-upload {
+    font-weight: bold;
+    color: #007ad9;
+}
+
+.custom-upload-area small {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.custom-upload-area:hover {
+    border-color: #007ad9;
+}

@@ -1,0 +1,52 @@
+.custom-progress {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.progress-wrapper {
+    margin: 90px;
+}
+
+.progress-container {
+    height: 20px;
+    background-color: #e0e0e0;
+}
+
+.progress-segments {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    width: 100%;
+    pointer-events: none;
+}
+
+.progress-segments div {
+    height: 100%;
+}
+
+.positive {
+    background-color: #4caf50;
+}
+
+.neutral {
+    background-color: #ffeb3b;
+}
+
+.negative {
+    background-color: #f44336;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5px;
+}
+
+.progress-labels .label {
+    text-align: center;
+    font-size: 12px;
+    display: block;
+}

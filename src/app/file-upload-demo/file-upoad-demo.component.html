@@ -1,0 +1,46 @@
+<div class="p-card">
+    <div class="p-card-body">
+        <div class="p-card-title">Upload Media</div>
+
+        <p-fileUpload name="media" accept="image/*,video/*" [customUpload]="true" [showUploadButton]="false"
+            [showCancelButton]="false" (uploadHandler)="onUpload($event)" (onSelect)="onFileSelect($event)"
+            (onClear)="onClear()" #fileUpload>
+            <ng-template pTemplate="content">
+                <div class="p-d-flex p-flex-column p-ai-center p-jc-center p-p-3 drag-area"
+                    [ngClass]="{ 'dragging': dragover }" (dragover)="onDragOver()" (dragleave)="onDragLeave()"
+                    (drop)="onDrop()">
+                    <!-- <i class="pi pi-cloud-upload p-text-2xl"></i> -->
+                    <p-button icon="pi pi-cloud-upload" [rounded]="true" [outlined]="true" severity="success"
+                        [disabled]="!uploadedFile || uploadedFile.length === 0" />
+                    <p class="p-mb-3">
+                        <span *ngIf="!uploadedFile">Click to upload or drag and drop</span>
+                    </p>
+                    <p class="p-text-light">
+                        MP4, PNG, JPG or GIF (max. 800x400px)
+                    </p>
+                </div>
+            </ng-template>
+        </p-fileUpload>
+
+        <!-- Display progress and uploaded file information -->
+        <div *ngIf="uploadedFile" class="file-upload--wrapper">
+            <div class="card-file-upload">
+                <div class="file-info p-d-flex p-ai-center">
+                    <i class="pi pi-file-video p-mr-2"></i>
+                    <div>
+                        <p>{{ uploadedFile.name }}</p>
+                        <small>{{ (uploadedFile.size / 1024 / 1024).toFixed(2) }} MB</small>
+                    </div>
+                </div>
+
+                <!-- Progress Bar positioned next to delete icon -->
+                <div class="p-d-flex p-ai-center">
+                    <button pButton icon="pi pi-trash" class="p-button-danger p-ml-2" (click)="deleteFile()"></button>
+                </div>
+            </div>
+            <div class="p-d-flex">
+                <p-progressBar [value]="uploadProgress" [showValue]="true"></p-progressBar>
+            </div>
+        </div>
+    </div>
+</div>

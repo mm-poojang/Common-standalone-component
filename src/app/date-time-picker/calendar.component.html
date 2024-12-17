@@ -1,0 +1,23 @@
+<div>
+    Welcome to calendar view
+</div>
+<p-calendar [(ngModel)]="selectedDate" [monthNavigator]="false" [yearNavigator]="false">
+    <!-- Custom Header -->
+    <ng-template pTemplate="header">
+        <p-dropdown [(ngModel)]="selectedMonth" [options]="monthOptions"></p-dropdown>
+        <p-dropdown [(ngModel)]="selectedYear" [options]="yearOptions"></p-dropdown>
+    </ng-template>
+
+    <!-- Week-wise Date Layout (style as needed) -->
+    <ng-template pTemplate="date" let-date>
+        <div [ngClass]="{'week-start': date.weekStart}">
+            {{ date.day }}
+        </div>
+    </ng-template>
+
+    <!-- Footer with Buttons -->
+    <ng-template pTemplate="footer">
+        <button (click)="reset()" pButton label="Reset"></button>
+        <button (click)="done()" pButton label="Done"></button>
+    </ng-template>
+</p-calendar>
